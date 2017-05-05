@@ -6,11 +6,11 @@ search: true
 
 # Overview
 
-Welcome to the iPaaS website!
+Welcome to the Syndesis website!
 
 # Authentication
 
-You must grant the iPaaS application the proper permissions via [OpenShift](https://www.openshift.com).
+You must grant the Syndesis application the proper permissions via [OpenShift](https://www.openshift.com).
 
 1. When you first land on the application website you will be prompted to provide things like your name and email address.
 2. You are redirected to GitHub to allow permissions.
@@ -43,7 +43,3 @@ Thanks to everyone for your continued hard work!
 <a href="https://issues.jboss.org/browse/IPAAS-299?jql=labels%20%3D%20Keynote" rel="nofollow" target="_blank">JIRA Issues for Keynote</a>
 
 Ends: May 12, 2017 (Fri)
-
-<!--
-<a href="https://issues.jboss.org/secure/RapidBoard.jspa?rapidView=3626" rel="nofollow" target="_blank">JIRA Issues</a>
--->
