@@ -24,6 +24,10 @@ ready do
   require './lib/tabs.rb'
 end
 
+# Github pages require relative links
+activate :relative_assets
+set :relative_links, true
+
 activate :asciidoc
 activate :directory_indexes
 activate :sprockets
@@ -34,9 +38,6 @@ activate :autoprefixer do |config|
   config.inline   = true
 end
 
-# Github pages require relative links
-activate :relative_assets
-set :relative_links, true
 
 # Layouts
 page "/api-docs/*", :layout => "api-docs"
