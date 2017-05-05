@@ -17,7 +17,7 @@ search: true
 
 # Introduction
 
-This guide assumes that you are either a developer or contributor of iPaaS. If you are looking for a guide to teach you the ins and outs of iPaaS and how to use it, please refer to the <a href="/users" rel="nofollow">User Guide</a>.
+This guide assumes that you are either a developer or contributor of iPaaS. If you are looking for a guide to teach you the ins and outs of iPaaS and how to use it, please refer to the [User Guide](/users).
 
 
 <blockquote class="area-specific design">
@@ -45,8 +45,7 @@ Backend
 Coming soon.
 
 <blockquote class="area-specific ui qe notes">
-UI
-You must replace <code>meowmeowmeow</code> with your personal API key.
+UI You must replace <code>meowmeowmeow</code> with your personal API key.
 </blockquote>
 
 <blockquote class="area-specific design">
@@ -168,7 +167,7 @@ We are very behind on unit tests.
 
 ## UI
 
-We have a [Style Guide]() for the UI that can be found [here](). In addition, we follow the [official Angular 2 Style Guide]() when possible.
+We have a [Style Guide](https://github.com/syndesisio/syndesis-ui-style-guide) for the UI that should be followed when contributing. In addition, we follow the [official Angular 2 Style Guide](https://angular.io/styleguide) when possible.
 
 
 # Kittens

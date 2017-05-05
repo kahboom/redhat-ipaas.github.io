@@ -1,0 +1,66 @@
+////////////////////////////////////////////////////////////////////////////////
+// NAVBAR
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+// TOP NAVIGATION
+////////////////////////////////////////////////////////////////////////////////
+
+.navbar {
+  position: fixed;
+  height: 50px;
+  background: #000000;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 5000;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+
+    li {
+      float: left;
+      padding: 17px 0;
+
+      a {
+        color: #fff;
+        cursor: pointer;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        opacity: .8;
+        padding: 16px;
+        text-decoration: none;
+      }
+
+      a:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .logo {
+    a {
+      float: left;
+      height: 17px;
+      width: 200px;
+      display: block;
+      //margin: 10px 20px;
+      margin: 17px 35px 17px 10px;
+      font-size: 0px/0px a;
+      color: transparent;
+      text-shadow: none;
+      background-image: url("../images/logo-white-02.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+    }
+  }
+}
+
+
+

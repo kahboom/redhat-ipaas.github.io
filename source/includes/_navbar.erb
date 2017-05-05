@@ -3,12 +3,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="logo">
-        <a class="navbar-brand" href="/">iPaaS</a>
+        <%= link_to 'Syndesis', '/' %>
       </div>
       <ul class="nav navbar-nav">
-          <li><a href="/users">Users</a></li>
-          <li><a href="/developers">Developers</a></li>
-          <li><a href="/api-docs">API Docs</a></li>
+          <li><%= link_to 'Users', '/users' %></li>
+          <li><%= link_to 'Developers', '/developers' %></li>
+          <li><%= link_to 'API Docs', '/api-docs' %></li>
           <li><a href="https://www.github.com/redhat-ipaas/" target="_blank" rel="nofollow">GitHub</a>
           <li><a href="https://ipaas-staging.b6ff.rh-idev.openshiftapps.com/" target="_blank" rel="nofollow">UI Staging</a>
           <li><a href="https://ipaas-staging.b6ff.rh-idev.openshiftapps.com/api/v1" target="_blank" rel="nofollow">API Staging</a>
@@ -18,6 +18,6 @@
           <li>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
