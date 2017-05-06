@@ -9,8 +9,6 @@ area_tabs:
   - qe: QE
   - support: Support
   - resources: Resources
-  - planning: Planning
-  - notes: Notes
 
 search: true
 ---
@@ -23,10 +21,10 @@ This guide assumes that you are either a developer or contributor of Syndesis. I
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </blockquote>
 
-<blockquote class="area-specific resources">
+<blockquote class="area-specific design">
 <ul>
 <li>
-<a href=""></a>
+<a href="https://redhat.invisionapp.com/d/main#/projects/prototypes/8777199" target="_blank">InVision Prototype</a>
 </li>
 </ul>
 </blockquote>
@@ -190,7 +188,7 @@ The beauty of Integrations in Syndesis is that not only can you integrate action
 
 ## Creating Integrations
 
-<blockquote class="area-specific notes">
+<blockquote class="area-specific backend">
 When Integrations are created, they are activated automatically and persisted on GitHub. Once your Integration is deployed, you will be able to see that a new repository has been created on the authorized GitHub account.
 </blockquote>
 
@@ -237,7 +235,7 @@ Templates will be available in a future release.
 
 We love our contributors! If you'd like to get started with contributing to the project, click on the tab on the right hand side for the area you're interested in contributing to.
 
-If you'd like to contribute to the website, please check out the README [here](https://github.com/syndesisio/syndesis.io/blob/source/README.md). The template we use is <a href="https://github.com/lord/slate" target="_blank">Documentation Powered by Slate</a>, with some customizations.
+If you'd like to contribute to the website, please check out the README [here](https://github.com/syndesisio/syndesis.io/blob/source/README.md). The template we use is <a href="https://github.com/lord/slate" target="_blank">Slate</a>, with some customizations.
 
 <blockquote class="area-specific ui">
 We have a [Style Guide](https://github.com/syndesisio/syndesis-ui-style-guide) for the UI that should be followed when contributing. In addition, we follow the [official Angular 2 Style Guide](https://angular.io/styleguide) when possible.
