@@ -17,21 +17,9 @@ search: true
 
 This guide assumes that you are either a developer or contributor of Syndesis. If you are looking for a guide to teach you the ins and outs of Syndesis and how to use it, please refer to the [User Guide](../users/index.html).
 
-<blockquote class="area-specific design">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</blockquote>
-
-<blockquote class="area-specific design">
-<ul>
-<li>
+<blockquote class="area-specific design resources">
 <a href="https://redhat.invisionapp.com/d/main#/projects/prototypes/8777199" target="_blank">InVision Prototype</a>
-</li>
-</ul>
 </blockquote>
-
-```backend
-Backend
-```
 
 ## How to Use this Guide
 
