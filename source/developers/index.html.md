@@ -160,10 +160,6 @@ An example of a Connection is a "Twitter mention", configured with your Twitter 
 
 ## Creating Connections
 
-<blockquote class="area-specific design">
-<a href="" title="" target="_blank" rel="nofollow"><img src="" title=""></a>
-</blockquote>
-
 There are a few places you can go to create a Connection.
 
 1. From the Dashboard, scroll down to the Dashboard: Connections section, and click on the Create Connection button on the right-hand side OR navigate to Connections on the left-hand navigation bar, and then click on the Create Connection button on the upper right-hand side.
@@ -192,11 +188,11 @@ Integrations use one or more Connections to, well, integrate data from the web s
 
 The beauty of Integrations in Syndesis is that not only can you integrate actions from multiple web services, but you can also work with the data gathered from each Connection using the concept of Steps. When you create an Integration and choose the Connections you'd like to integrate, you are then prompted to either add in another Connection or add a Step in between. An example of a Step might be data mapping or logging.
 
+## Creating Integrations
+
 <blockquote class="area-specific notes">
 When Integrations are created, they are activated automatically and persisted on GitHub. Once your Integration is deployed, you will be able to see that a new repository has been created on the authorized GitHub account.
 </blockquote>
-
-## Creating Integrations
 
 <blockquote class="area-specific design">
 <code>Create Integration: From Scratch</code>
