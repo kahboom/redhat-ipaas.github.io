@@ -262,24 +262,17 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>This guide assumes that you are either a developer or contributor of iPaaS. If you are looking for a guide to teach you the ins and outs of iPaaS and how to use it, please refer to the <a href="../users/">User Guide</a>.</p>
+<p>This guide assumes that you are either a developer or contributor of Syndesis. If you are looking for a guide to teach you the ins and outs of Syndesis and how to use it, please refer to the <a href="../users/">User Guide</a>.</p>
 
 <blockquote class="area-specific design">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </blockquote>
-
-<blockquote class="area-specific qe">
-QE
-</blockquote>
-
-<blockquote class="area-specific design">
-Design
-</blockquote>
-
-<blockquote class="area-specific backend">
-</blockquote>
 <pre class="highlight plaintext"><code>Backend
 </code></pre>
+<h2 id="how-to-use-this-guide">How to Use this Guide</h2>
+
+<p>You may have noticed some tabs on the right-hand side. These tabs are there to assist you with the different areas involved in Syndesis, and how they pertain to each model.</p>
+
 <h1 id="architecture">Architecture</h1>
 
 <p>Coming soon.</p>
@@ -296,229 +289,183 @@ UI You must replace <code>meowmeowmeow</code> with your personal API key.
 </code></pre>
 <h1 id="getting-started">Getting Started</h1>
 
-<h2 id="api">API</h2>
+<h2 id="syndesis-api">Syndesis API</h2>
 
-<p>The API can be run locally or you can use the staging API. If you&rsquo;ll strictly be working on the UI, or just want to get the app running as quickly as possible, we recommend using the API staging server rather than running it locally. </p>
+<p>The API can be run locally or you can use the staging API. If you&rsquo;ll strictly be working on the UI, or just want to get the app running as quickly as possible, we recommend using the API staging server rather than running it locally.</p>
+<pre class="highlight json tab-json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"apiEndpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://syndesis-staging.b6ff.rh-idev.openshiftapps.com/api/v1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Syndesis"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"datamapper"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"baseJavaServiceUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://localhost:8585/v2/atlas/java/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseMappingServiceUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://localhost:8585/v2/atlas/"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"oauth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"syndesis-ui"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"scopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"oidc"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hybrid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"issuer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://syndesis-staging.b6ff.rh-idev.openshiftapps.com/auth/realms/syndesis"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"auto-link-github"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="staging-api">Staging API</h3>
 
-<h3 id="running-the-api-locally">Running the API Locally</h3>
+<p>This is the easiest way to get started with making contributions in the UI. Fork the <code class="prettyprint">syndesis-ui</code> repository to your desktop, and look for the <code class="prettyprint">./src/config-example.json</code> file. Copy and paste it, renaming it to <code class="prettyprint">config.json</code>. Open it up and toward the top it should look something like the example provided on the right.</p>
 
-<p>Instructions here.</p>
+<p>The <code class="prettyprint">oauth.issuer</code> property should also be changed to <code class="prettyprint">https://syndesis-staging.b6ff.rh-idev.openshiftapps.com/auth/realms/syndesis</code>.</p>
 
-<h3 id="authentication">Authentication</h3>
+<h3 id="locally">Locally</h3>
 
-<blockquote>
-<p>To authorize via the UI, simply access it in your browser, where you&rsquo;ll be redirected to an OpenShift login/registration page where you are prompted for your name, email address, etc. You&rsquo;ll then be redirected to a  GitHub permissions page. You&rsquo;ll be prompted to grant OpenShift the proper permissions. Once you accept, you&rsquo;ll finally be granted access to the UI. You should only need to do this once. </p>
-</blockquote>
-<pre class="highlight python tab-python tab-python"><code><span class="n">Design</span>
-<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s">"https://cloud.githubusercontent.com/assets/3844502/24225759/9d8ebdd6-0f38-11e7-8c76-8d6ce48dda5f.jpg"</span><span class="o">&gt;</span>
-</code></pre><pre class="highlight csharp tab-csharp tab-csharp"><code><span class="n">Backend</span>
-<span class="n">import</span> <span class="n">kittn</span>
+<p>If you&rsquo;d like to run the API locally, follow the instructions in the <code class="prettyprint">README.md</code> file <a href="https://github.com/syndesisio/syndesis-rest">here</a>.</p>
 
-<span class="n">api</span> <span class="p">=</span> <span class="n">kittn</span><span class="p">.</span><span class="nf">authorize</span><span class="p">(</span><span class="err">'</span><span class="n">meowmeowmeow</span><span class="err">'</span><span class="p">)</span>
-</code></pre><pre class="highlight php tab-php tab-php"><code>QE
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-</code></pre><pre class="highlight c tab-c tab-c"><code><span class="n">Notes</span>
-<span class="k">const</span> <span class="n">kittn</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="err">'</span><span class="n">kittn</span><span class="err">'</span><span class="p">);</span>
-
-<span class="n">let</span> <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="err">'</span><span class="n">meowmeowmeow</span><span class="err">'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
+<h2 id="syndesis-ui">Syndesis UI</h2>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must first set up the API by following the instructions above.
 </aside>
 
-<h2 id="running-the-ui">Running the UI</h2>
+<ol>
+<li>Fork the <code class="prettyprint">syndesis-ui</code> located <a href="https://github.com/syndesisio/syndesis-ui">here</a>.</li>
+<li>Clone your fork to your desktop.</li>
+<li>Build with <code class="prettyprint">yarn</code>.</li>
+<li>Run with <code class="prettyprint">ng serve</code>.</li>
+</ol>
 
-<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper.</p>
+<p>Navigate to <code class="prettyprint">http://localhost:4200</code> in your browser.</p>
 
-<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+<h2 id="data-mapper">Data Mapper</h2>
 
-<h3 id="if-youll-be-using-the-staging-api">If you&rsquo;ll be using the staging API</h3>
-
-<p>Coming soon.</p>
-
-<h3 id="if-youve-set-up-the-api-locally">If you&rsquo;ve set up the API locally</h3>
-
-<p>Coming soon.</p>
-
-<h1 id="pages">Pages</h1>
-
-<h2 id="connections">Connections</h2>
-
-<h3 id="create-connection">Create Connection</h3>
-
-<h2 id="integrations">Integrations</h2>
-
-<h3 id="integration-list">Integration List</h3>
-
-<h3 id="create-integration">Create Integration</h3>
-
-<h2 id="tags">Tags</h2>
-
-<h3 id="create-tag">Create Tag</h3>
-
-<h2 id="templates">Templates</h2>
-
-<h3 id="create-tag">Create Tag</h3>
-
-<h2 id="users">Users</h2>
-
+<p>To set up the data mapper, be sure to include the <code class="prettyprint">dataMapper</code> property in your <code class="prettyprint">config.json</code> file.</p>
+<pre class="highlight json tab-json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"datamapper"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"baseJavaServiceUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://localhost:8585/v2/atlas/java/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseMappingServiceUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://localhost:8585/v2/atlas/"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h1 id="tests">Tests</h1>
+
+<h2 id="system-tests">System Tests</h2>
+
+<p><a href="https://github.com/syndesisio/syndesis-system-tests">This</a> is the repository you can clone to run system-wide tests.</p>
+
+<p>For instance, to run them locally you&rsquo;d run the following:
+<code class="prettyprint">mvn clean test</code></p>
 
 <h2 id="e2e-tests">E2E Tests</h2>
 
-<p>Points of Contact: </p>
+<p>Our E2E tests use Cucumber and Gherkin. Cucumber is a great way to make sure that tests follow the narrative for each sprint.</p>
 
-<p><a href="https://issues.jboss.org/browse/IPAAS-285">Happy Path</a> for E2E Tests</p>
+<blockquote class="area-specific resources">
+<ul>
+<li><a href="">Cucumber</a></li>
+<li><a href="">Gherkin</a></li>
+</ul>
+</blockquote>
 
 <h2 id="unit-tests">Unit Tests</h2>
 
-<p>We are very behind on unit tests.</p>
+<h3 id="running-test-suites-individually">Running Test Suites Individually</h3>
+
+<p>Be sure to click on the QE tabs on the right-hand side to learn how to run each suite of tests individually. We try to write unit tests for all repositories, both on the frontend and the backend.</p>
+
+<p><code class="prettyprint">
+</code></p>
+
+<h1 id="connections">Connections</h1>
+
+<p>Everyday in your day-to-day operations you use several web services, such as Salesforce, to complete tasks. In Syndesis, we refer to configured versions of each web service and a specific task, collectively, as a Connection.</p>
+
+<p>An example of a Connection is a &ldquo;Twitter mention&rdquo;, configured with your Twitter account details. As you&rsquo;ll see later, you use one or more Connections to create an Integration (more on this later).</p>
+
+<h2 id="creating-connections">Creating Connections</h2>
+
+<blockquote class="area-specific design">
+<a href="" title="" target="_blank" rel="nofollow"><img src="" title=""></a>
+</blockquote>
+
+<p>There are a few places you can go to create a Connection.</p>
+
+<ol>
+<li>From the Dashboard, scroll down to the Dashboard: Connections section, and click on the Create Connection button on the right-hand side OR navigate to Connections on the left-hand navigation bar, and then click on the Create Connection button on the upper right-hand side.</li>
+<li>Select a web service from the list available.</li>
+<li>Configure your web service.</li>
+<li>Validate it to make sure the Connection has been configured properly.</li>
+<li>Give your Connection a name and description. If you don&rsquo;t, one will be generated for you automatically.</li>
+<li>Press the Create Connection button.</li>
+<li>$$ PROFIT!</li>
+</ol>
+
+<p>If you navigate to the Connection List you should now see your newly created Connection.</p>
+
+<h2 id="connection-list">Connection List</h2>
+
+<p>In the Connection List you can see a list of Connections you&rsquo;ve created.</p>
+
+<h2 id="editing-connections">Editing Connections</h2>
+
+<p>Editing a Connection is really simple. Go to the Connection List, locate the Connection you&rsquo;d like to edit, and click on it. You can also select the kabob on the right-hand side of the Connection card, which opens up a small dropdown menu, and select &lsquo;Edit Connection&rsquo;.</p>
+
+<p>Then, simply make your changes and save them.</p>
+
+<h1 id="integrations">Integrations</h1>
+
+<p>Integrations use one or more Connections to, well, integrate data from the web services you use. As mentioned above, Connections are pre-configured actions for your web services (e.g. Twitter mention). You can think of Integrations as a knot that results from tying the ends of two ropes together, where each rope is a Connection.</p>
+
+<p>The beauty of Integrations in Syndesis is that not only can you integrate actions from multiple web services, but you can also work with the data gathered from each Connection using the concept of Steps. When you create an Integration and choose the Connections you&rsquo;d like to integrate, you are then prompted to either add in another Connection or add a Step in between. An example of a Step might be data mapping or logging.</p>
+
+<blockquote class="area-specific notes">
+When Integrations are created, they are activated automatically and persisted on GitHub. Once your Integration is deployed, you will be able to see that a new repository has been created on the authorized GitHub account.
+</blockquote>
+
+<h2 id="creating-integrations">Creating Integrations</h2>
+
+<blockquote class="area-specific design">
+<code>Create Integration: From Scratch</code>
+<a href="../images/designs/integrations/create/From-Scratch.png" target="_blank" rel="nofollow" title="Create Integration from Scratch">
+<img src="../images/designs/integrations/create/From-Scratch.png" alt="Create an Integration from Scratch">
+</a>
+</blockquote>
+
+<p>To create an Integration, click Integrations on the left-hand navigation bar. Then click on the Create Integration button on the upper right-hand side.</p>
+
+<h2 id="integration-list">Integration List</h2>
+
+<blockquote class="area-specific design">
+<code>Integration List: Empty</code>
+<a href="../images/designs/integrations/list/Integration-Empty.png" target="_blank">
+<img src="../images/designs/integrations/list/Integration-Empty.png" alt="Integration List: Empty">
+</a>
+</blockquote>
+
+<h2 id="editing-integrations">Editing Integrations</h2>
+
+<h1 id="tags">Tags</h1>
+
+<p>Tags are great for keeping things organized. At the moment, you can assign multiple Tags to Integrations, Connections, and Templates. In the near future, you will also be able to sort by Tags.</p>
+
+<h2 id="creating-tags">Creating Tags</h2>
+
+<p>When you are creating an Integration, you will see a field for Tags. Start typing and you&rsquo;ll see a list of suggestions based on existing Tags. If the Tag you want doesn&rsquo;t already exist, simply type the name of the Tag you would like to create, and press Enter&ndash;it will create the Tag for you. </p>
+
+<h2 id="managing-tags">Managing Tags</h2>
+
+<p>At the moment, it is not possible to manage Tags. Once they are created they cannot be edited. We will be adding in the ability to edit and manage your Tags in a future release.</p>
+
+<h1 id="templates">Templates</h1>
+
+<p>Templates will be available in a future release.</p>
 
 <h1 id="contributing">Contributing</h1>
 
-<h2 id="ui">UI</h2>
+<p>We love our contributors! If you&rsquo;d like to get started with contributing to the project, click on the tab on the right hand side for the area you&rsquo;re interested in contributing to.</p>
 
-<p>We have a <a href="https://github.com/syndesisio/syndesis-ui-style-guide">Style Guide</a> for the UI that should be followed when contributing. In addition, we follow the <a href="https://angular.io/styleguide">official Angular 2 Style Guide</a> when possible.</p>
+<p>If you&rsquo;d like to contribute to the website, please check out the README <a href="https://github.com/syndesisio/syndesis.io/blob/source/README.md">here</a>.</p>
 
-<h1 id="kittens">Kittens</h1>
-
-<h2 id="get-all-kittens">Get All Kittens</h2>
-<pre class="highlight php tab-php tab-php"><code>QE
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-</code></pre><pre class="highlight ruby tab-ruby tab-ruby"><code><span class="no">Notes</span>
-<span class="n">import</span> <span class="n">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="nf">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">()</span>
-</code></pre><pre class="highlight java tab-java tab-java"><code><span class="n">Backend</span>
-<span class="n">curl</span> <span class="s">"http://example.com/api/kittens"</span>
-  <span class="o">-</span><span class="n">H</span> <span class="s">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight csharp tab-csharp tab-csharp"><code><span class="n">Design</span>
-<span class="k">const</span> <span class="n">kittn</span> <span class="p">=</span> <span class="nf">require</span><span class="p">(</span><span class="err">'</span><span class="n">kittn</span><span class="err">'</span><span class="p">);</span>
-
-<span class="k">let</span> <span class="n">api</span> <span class="p">=</span> <span class="n">kittn</span><span class="p">.</span><span class="nf">authorize</span><span class="p">(</span><span class="err">'</span><span class="n">meowmeowmeow</span><span class="err">'</span><span class="p">);</span>
-<span class="k">let</span> <span class="n">kittens</span> <span class="p">=</span> <span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="k">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
+<blockquote class="area-specific ui">
+We have a [Style Guide](https://github.com/syndesisio/syndesis-ui-style-guide) for the UI that should be followed when contributing. In addition, we follow the [official Angular 2 Style Guide](https://angular.io/styleguide) when possible.
 </blockquote>
-<pre class="highlight ruby tab-ruby tab-ruby"><code><span class="no">UX</span>
-<span class="p">[</span>
-  <span class="p">{</span>
-    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Fluffums"</span><span class="p">,</span>
-    <span class="s2">"breed"</span><span class="p">:</span> <span class="s2">"calico"</span><span class="p">,</span>
-    <span class="s2">"fluffiness"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-    <span class="s2">"cuteness"</span><span class="p">:</span> <span class="mi">7</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Max"</span><span class="p">,</span>
-    <span class="s2">"breed"</span><span class="p">:</span> <span class="s2">"unknown"</span><span class="p">,</span>
-    <span class="s2">"fluffiness"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="s2">"cuteness"</span><span class="p">:</span> <span class="mi">10</span>
-  <span class="p">}</span>
-<span class="p">]</span>
-</code></pre>
-<p>This endpoint retrieves all kittens.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-<h2 id="get-a-specific-kitten">Get a Specific Kitten</h2>
-<pre class="highlight c tab-c tab-c"><code><span class="n">UI</span>
-<span class="n">require</span> <span class="err">'</span><span class="n">kittn</span><span class="err">'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">Kittn</span><span class="o">::</span><span class="n">APIClient</span><span class="p">.</span><span class="n">authorize</span><span class="o">!</span><span class="p">(</span><span class="err">'</span><span class="n">meowmeowmeow</span><span class="err">'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python tab-python"><code><span class="n">UX</span>
-<span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight javascript tab-javascript tab-javascript"><code><span class="nx">Design</span>
-<span class="nx">curl</span> <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="o">-</span><span class="nx">H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight python tab-python tab-python"><code><span class="n">Notes</span>
-<span class="n">const</span> <span class="n">kittn</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">'kittn'</span><span class="p">);</span>
-
-<span class="n">let</span> <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">);</span>
-<span class="n">let</span> <span class="nb">max</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight python tab-python tab-python"><code><span class="n">Notes</span>
-<span class="p">{</span>
-  <span class="s">"id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="s">"name"</span><span class="p">:</span> <span class="s">"Max"</span><span class="p">,</span>
-  <span class="s">"breed"</span><span class="p">:</span> <span class="s">"unknown"</span><span class="p">,</span>
-  <span class="s">"fluffiness"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-  <span class="s">"cuteness"</span><span class="p">:</span> <span class="mi">10</span>
-<span class="p">}</span>
-</code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
-
-<h3 id="url-parameters">URL Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
 
       </div>
       <div class="dark-box">
