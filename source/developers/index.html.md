@@ -23,6 +23,14 @@ This guide assumes that you are either a developer or contributor of Syndesis. I
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </blockquote>
 
+<blockquote class="area-specific resources">
+<ul>
+<li>
+<a href=""></a>
+</li>
+</ul>
+</blockquote>
+
 ```backend
 Backend
 ```
@@ -34,14 +42,20 @@ You may have noticed some tabs on the right-hand side. These tabs are there to a
 
 # Architecture
 
-Coming soon.
+_A visual diagram of the Syndesis architecture is currently underway._
 
-<blockquote class="area-specific ui qe notes">
-UI You must replace <code>meowmeowmeow</code> with your personal API key.
+Syndesis can be run on OpenShift or Kubernetes, on the cloud or on premises. Under the hood it uses Apache Camel magic to allow for a seamless integration between a wide array of web services, along with the flexibility to create new Camel connectors for your own custom needs, should we not already provide them OOTB.
+
+<blockquote class="area-specific ui">
+The UI is built with Angular 2, TypeScript, and Webpack.
 </blockquote>
 
-<blockquote class="area-specific design">
-<img src="https://cloud.githubusercontent.com/assets/3844502/24225759/9d8ebdd6-0f38-11e7-8c76-8d6ce48dda5f.jpg">
+<blockquote class="area-specific backend">
+The backend is written mostly in Java, using open source technologies like Camel.
+</blockquote>
+
+<blockquote class="area-specific ui backend resources">
+<a href="https://github.com/syndesisio/syndesis-ui/wiki/Mapping-UI-design-to-REST-domain-model" target="_blank">Mapping UI Design to REST Domain Model</a>
 </blockquote>
 
 ```ruby
@@ -116,7 +130,7 @@ To set up the data mapper, be sure to include the `dataMapper` property in your 
 
 ## System Tests
 
-[This](https://github.com/syndesisio/syndesis-system-tests) is the repository you can clone to run system-wide tests.
+[This](https://github.com/syndesisio/syndesis-system-tests) is the repository you can clone to run system-wide tests. These tests are meant to be run against OpenShift (either within or pointing to an Openshift installation).
 
 For instance, to run them locally you'd run the following:
 `mvn clean test`
@@ -127,8 +141,8 @@ Our E2E tests use Cucumber and Gherkin. Cucumber is a great way to make sure tha
 
 <blockquote class="area-specific resources">
 <ul>
-<li><a href="">Cucumber</a></li>
-<li><a href="">Gherkin</a></li>
+<li><a href="https://github.com/cucumber/cucumber-js" target="_blank">Cucumber</a></li>
+<li><a href="https://github.com/cucumber/cucumber/wiki/Gherkin" target="_blank">Gherkin</a></li>
 </ul>
 </blockquote>
 
@@ -137,9 +151,6 @@ Our E2E tests use Cucumber and Gherkin. Cucumber is a great way to make sure tha
 ### Running Test Suites Individually
 
 Be sure to click on the QE tabs on the right-hand side to learn how to run each suite of tests individually. We try to write unit tests for all repositories, both on the frontend and the backend.
-
-``
-``
 
 # Connections
 
@@ -167,7 +178,7 @@ If you navigate to the Connection List you should now see your newly created Con
 
 ## Connection List
 
-In the Connection List you can see a list of Connections you've created.
+In the Connection List you can see a list of Connections you've created. This is also where you can select a Connection to edit it.
 
 ## Editing Connections
 
@@ -198,14 +209,16 @@ To create an Integration, click Integrations on the left-hand navigation bar. Th
 
 ## Integration List
 
-<blockquote class="area-specific design">
-<code>Integration List: Empty</code>
+In the Integration List you can see a list of Integrations you've created. This is also where you can monitor their overall metrics, or select an Integration to edit it.
+
+
+### Integration List: Empty
+
+This is the state of the Integration List before you have created any Integrations.
+
 <a href="/images/designs/integrations/list/Integration-Empty.png" target="_blank">
 <img src="/images/designs/integrations/list/Integration-Empty.png" alt="Integration List: Empty">
 </a>
-</blockquote>
-
-## Editing Integrations
 
 # Tags
 
@@ -228,7 +241,7 @@ Templates will be available in a future release.
 
 We love our contributors! If you'd like to get started with contributing to the project, click on the tab on the right hand side for the area you're interested in contributing to.
 
-If you'd like to contribute to the website, please check out the README [here](https://github.com/syndesisio/syndesis.io/blob/source/README.md).
+If you'd like to contribute to the website, please check out the README [here](https://github.com/syndesisio/syndesis.io/blob/source/README.md). The template we use is <a href="https://github.com/lord/slate" target="_blank">Documentation Powered by Slate</a>, with some customizations.
 
 <blockquote class="area-specific ui">
 We have a [Style Guide](https://github.com/syndesisio/syndesis-ui-style-guide) for the UI that should be followed when contributing. In addition, we follow the [official Angular 2 Style Guide](https://angular.io/styleguide) when possible.
