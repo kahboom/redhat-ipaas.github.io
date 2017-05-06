@@ -10,13 +10,16 @@ search: true
 A test using the User Guide layout.
 
 
+## How to Use this Guide
+
+You may have noticed some tabs on the right-hand side. These tabs are there to assist you with the different areas involved in Syndesis, and how they pertain to each model.
+
+
 # Connections
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Everyday in your day-to-day operations you use several web services, such as Salesforce, to complete tasks. In Syndesis, we refer to configured versions of each web service and a specific task, collectively, as a Connection.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+An example of a Connection is a "Twitter mention", configured with your Twitter account details. As you'll see later, you use one or more Connections to create an Integration (more on this later).
 
 # Integrations
 
